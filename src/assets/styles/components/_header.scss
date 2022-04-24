@@ -1,0 +1,43 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4.2rem;
+  margin-bottom: 4.2rem;
+  @include m.tabletBig {
+    margin-top: unset;
+  }
+  &_title {
+    font-size: 2.6rem;
+    color: v.$textDarkLM;
+  }
+  &_mode {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: v.$textInfoLM;
+    &:hover {
+      cursor: pointer;
+      color: v.$textDarkLM;
+      img {
+        filter: brightness(10%);
+      }
+    }
+    &-dark {
+      color: v.$white;
+      &:hover {
+        color: v.$dateLM;
+        img {
+          filter: invert(49%) sepia(41%) saturate(272%) hue-rotate(178deg)
+            brightness(89%) contrast(94%);
+        }
+      }
+    }
+    &_title {
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+  }
+}
