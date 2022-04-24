@@ -25,16 +25,6 @@
         filter: brightness(10%);
       }
     }
-    &-dark {
-      color: v.$white;
-      &:hover {
-        color: v.$dateLM;
-        img {
-          filter: invert(49%) sepia(41%) saturate(272%) hue-rotate(178deg)
-            brightness(89%) contrast(94%);
-        }
-      }
-    }
     &_title {
       font-weight: 700;
       font-size: 1.3rem;

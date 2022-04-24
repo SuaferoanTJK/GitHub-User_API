@@ -1,11 +1,37 @@
 @use "variables" as v;
 
-.bg-light {
-  background-color: v.$backgroundLM;
-}
-.bg-dark {
-  background-color: v.$backgroundDM;
-}
-.text-white {
+.dark {
   color: v.$white;
+  .home {
+    background-color: v.$backgroundDM;
+  }
+  .navbar {
+    &_title,
+    &_mode {
+      color: v.$white;
+    }
+    &_mode {
+      img {
+        filter: brightness(0) invert(1);
+      }
+      &:hover {
+        color: v.$textInfoLM;
+        img {
+          filter: invert(38%) sepia(64%) saturate(351%) hue-rotate(178deg)
+            brightness(93%) contrast(93%);
+        }
+      }
+    }
+  }
+  .filter {
+    background-color: v.$cardBackgroundDM;
+    box-shadow: unset;
+    &_input {
+      background-color: v.$cardBackgroundDM;
+      color: v.$white;
+      &::placeholder {
+        color: v.$white;
+      }
+    }
+  }
 }
