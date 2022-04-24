@@ -34,4 +34,30 @@
       }
     }
   }
+  .profile {
+    background-color: v.$cardBackgroundDM;
+    &_username,
+    &_date,
+    &_description {
+      color: v.$white;
+    }
+    &_stadistics {
+      background-color: v.$backgroundDM;
+      li {
+        &:nth-child(1),
+        &:nth-child(2) {
+          color: v.$white;
+        }
+      }
+    }
+    &_links {
+      color: v.$white;
+      a {
+        color: v.$white;
+      }
+      &_icons {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
 }

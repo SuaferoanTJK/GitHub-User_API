@@ -1,0 +1,138 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.profile {
+  background-color: v.$white;
+  border-radius: 1.5rem;
+  padding: 3.2rem 2rem;
+  @include m.desktopMed {
+    padding: 5rem;
+  }
+  &_mainData {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3.2rem;
+    @include m.desktopMed {
+      margin-bottom: unset;
+    }
+    img {
+      width: 7rem;
+      height: 7rem;
+      border-radius: 100%;
+      background-color: v.$dateLM;
+      margin-right: 2rem;
+      @include m.tabletMed {
+        width: 11.7rem;
+        height: 11.7rem;
+      }
+    }
+    li {
+      &:not(.profile_date) {
+        margin-bottom: 1.2rem;
+      }
+    }
+  }
+  &_username {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: v.$textDarkLM;
+    @include m.tabletMed {
+      font-size: 2.6rem;
+    }
+  }
+  &_nickname,
+  &_date {
+    font-size: 1.3rem;
+    @include m.tabletMed {
+      font-size: 1.6rem;
+    }
+  }
+  &_nickname {
+    color: v.$button;
+  }
+  &_date {
+    color: v.$dateLM;
+    @include m.desktopMed {
+      position: absolute;
+      top: 2.5rem;
+      right: 0;
+    }
+  }
+  &_description {
+    color: v.$textInfoLM;
+    line-height: 1.5;
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 3.6rem;
+    @include m.tabletMed {
+      font-size: 1.5rem;
+    }
+    @include m.desktopMed {
+      margin-left: 13.7rem;
+      margin-top: -0.5rem;
+    }
+  }
+  &_stadistics {
+    background-color: v.$backgroundLM;
+    border-radius: 1rem;
+    padding: 1.8rem 2.6rem;
+    margin-bottom: 2.4rem;
+    display: flex;
+    gap: 3.3rem;
+    @include m.tabletMed {
+      gap: 10rem;
+    }
+    @include m.desktopMed {
+      margin-left: 13.7rem;
+    }
+    li {
+      &:nth-child(1) {
+        color: v.$textInfoLM;
+        font-size: 1.1rem;
+        @include m.tabletMed {
+          font-size: 1.3rem;
+        }
+      }
+      &:nth-child(2) {
+        color: v.$textDarkLM;
+        font-size: 1.6rem;
+        font-weight: 700;
+        @include m.tabletMed {
+          font-size: 2.2rem;
+        }
+      }
+    }
+  }
+  &_links {
+    color: v.$textInfoLM;
+    @include m.tabletMed {
+      @include m.grid(2, 1rem);
+    }
+    @include m.desktopMed {
+      margin-left: 13.7rem;
+    }
+    a {
+      color: v.$textInfoLM;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    li {
+      display: flex;
+      align-items: center;
+      font-size: 1.3rem;
+      @include m.tabletMed {
+        font-size: 1.5rem;
+      }
+      &:not(.last-icon) {
+        margin-bottom: 1.5rem;
+      }
+    }
+    &_icons {
+      display: inline;
+      margin-right: 2rem;
+      width: 1.4rem;
+    }
+  }
+}
