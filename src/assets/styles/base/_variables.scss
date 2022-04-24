@@ -1,18 +1,21 @@
-// Fuentes
-$fuentePrincipal: "Nunito", sans-serif;
+// Fonts
+$font: "Space Mono", monospace;
 
 // Media Queries
 $tabletMed: 480px;
-$tablet: 768px;
-$desktopBig: 1440px;
+$tabletBig: 768px;
 $desktopMed: 1024px;
-// Colores
-$darkblueDM: hsl(209, 23%, 22%);
-$backgroundDM: hsl(207, 26%, 17%);
-$verydarkblueLM: hsl(200, 15%, 8%);
-$darkgreyLM: hsl(0, 0%, 52%);
-$backgroundLM: hsl(0, 0%, 98%);
-$white: hsl(0, 0%, 100%);
+$desktopBig: 1440px;
 
-// Unidades
-$separacion: 5rem;
+// Colors
+$button: hsl(212, 100%, 50%);
+$buttonHover: hsl(212, 100%, 69%);
+$white: hsl(0, 0%, 100%);
+// * Light Colors
+$dateLM: hsl(217, 20%, 51%);
+$textInfoLM: hsl(217, 35%, 45%);
+$textDarkLM: hsl(217, 21%, 21%);
+$backgroundLM: hsl(227, 100%, 98%);
+// * Dark Colors
+$backgroundDM: hsl(220, 40%, 13%);
+$cardBackgroundDM: hsl(222, 41%, 20%);
