@@ -1,34 +1,40 @@
 import React from "react";
 import { Icons } from "./Icons";
 import { Link } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 const Card = () => {
+  const user = useSelector((state) => state.user);
+  function convert(str) {
+    var date = new Date(str),
+      mnth = ("0" + (date.getMonth() + 1)).slice(-2),
+      day = ("0" + date.getDate()).slice(-2);
+    return [day, mnth, date.getFullYear()].join("-");
+  }
   return (
     <main className="profile">
       <div className="profile_mainData">
-        <img src={Icons.Company} alt="Github Avatar" />
+        <img src={user.avatar_url} alt="Github Avatar" />
         <ul>
-          <li className="profile_username">The Octocat</li>
-          <li className="profile_nickname">@octocat</li>
-          <li className="profile_date">Joined 25 Jan 2011</li>
+          <li className="profile_username">{user.name}</li>
+          <li className="profile_nickname">@{user.login}</li>
+          <li className="profile_date">Joined {convert(user.created_at)}</li>
         </ul>
       </div>
       <p className="profile_description">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-        Quisque volutpat mattis eros.
+        {user.bio !== null ? user.bio : "Bio not found for this user"}
       </p>
       <div className="profile_stadistics">
         <ul>
           <li>Repos</li>
-          <li>8</li>
+          <li>{user.public_repos}</li>
         </ul>
         <ul>
           <li>Followers</li>
-          <li>3938</li>
+          <li>{user.followers}</li>
         </ul>
         <ul>
           <li>Following</li>
-          <li>9</li>
+          <li>{user.following}</li>
         </ul>
       </div>
       <div className="profile_links">
@@ -39,7 +45,7 @@ const Card = () => {
               src={Icons.Location}
               alt="Location Icon"
             />
-            San Francisco
+            {user.location !== null ? user.location : "Not Available"}
           </li>
           <li>
             <img
@@ -47,7 +53,9 @@ const Card = () => {
               src={Icons.Website}
               alt="Website Icon"
             />
-            <Link to="https://github.blog">https://github.blog</Link>
+            <a href={user.blog}>
+              {user.blog !== null ? user.blog : "Not Available"}
+            </a>
           </li>
         </ul>
         <ul>
@@ -57,7 +65,11 @@ const Card = () => {
               src={Icons.Twitter}
               alt="Twitter Icon"
             />
-            <Link to="/">Not Available</Link>
+            <a href={user.twitter_username}>
+              {user.twitter_username !== null
+                ? user.twitter_username
+                : "Not Available"}
+            </a>
           </li>
           <li className="last-icon">
             <img
@@ -65,7 +77,7 @@ const Card = () => {
               src={Icons.Company}
               alt="Company Icon"
             />
-            @github
+            {user.company !== null ? user.company : "Not Available"}
           </li>
         </ul>
       </div>

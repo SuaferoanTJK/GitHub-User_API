@@ -1,13 +1,18 @@
 import React from "react";
 import { Icons } from "./Icons";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { getUsers } from "../redux/actions/githubActions";
 
 const Filter = () => {
+  const dispatch = useDispatch();
+  const [name, setName] = useState("");
   return (
     <div className="filter">
       <button
         className="filter_icon"
         onClick={() => {
-          console.log("Icon search clicked");
+          dispatch(getUsers(name));
         }}
       >
         <img src={Icons.Search} alt="Search Icon" />
@@ -17,18 +22,18 @@ const Filter = () => {
         type="text"
         placeholder="Search GitHub username..."
         onChange={(search) => {
-          console.log(search);
+          setName(search.target.value);
         }}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
-            console.log("Enter clicked");
+            dispatch(getUsers(name));
           }
         }}
       />
       <button
         className="filter_btn"
         onClick={() => {
-          console.log("Btn search clicked");
+          dispatch(getUsers(name));
         }}
       >
         Search

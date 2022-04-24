@@ -1,7 +1,9 @@
-import { CHANGE_MODE } from "../types/types";
+import { CHANGE_MODE, GET_USERS, USE_MSG } from "../types/types";
 
 const initialState = {
   mode: false,
+  user: {},
+  msg: "",
 };
 
 export const githubAPI = (state = initialState, action) => {
@@ -11,7 +13,16 @@ export const githubAPI = (state = initialState, action) => {
         ...state,
         mode: action.payload,
       };
-
+    case GET_USERS:
+      return {
+        ...state,
+        user: action.payload,
+      };
+    case USE_MSG:
+      return {
+        ...state,
+        msg: action.payload,
+      };
     default:
       return state;
   }
