@@ -1,0 +1,13 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.home {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  background-color: v.$backgroundLM;
+  @include m.tabletBig {
+    justify-content: center;
+    align-items: center;
+  }
+}

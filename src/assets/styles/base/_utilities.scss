@@ -1,20 +1,63 @@
-@use 'variables' as v;
+@use "variables" as v;
 
-.text-center{
-    text-align: center;
-}
-.bg-primario{
-    background-color:v.$backgroundLM;
-}
-.bg-secundaria{
-    background-color:v.$backgroundDM;
-}
-.margin-negativo-10{
-    margin-top: -10rem;
-}
-.text-white{
-    color:v.$white;
-}
-.text-dark{
-    color:v.$verydarkblueLM;
+.dark {
+  color: v.$white;
+  .home {
+    background-color: v.$backgroundDM;
+  }
+  .navbar {
+    &_title,
+    &_mode {
+      color: v.$white;
+    }
+    &_mode {
+      img {
+        filter: brightness(0) invert(1);
+      }
+      &:hover {
+        color: v.$textInfoLM;
+        img {
+          filter: invert(38%) sepia(64%) saturate(351%) hue-rotate(178deg)
+            brightness(93%) contrast(93%);
+        }
+      }
+    }
+  }
+  .filter {
+    background-color: v.$cardBackgroundDM;
+    box-shadow: unset;
+    &_input {
+      background-color: v.$cardBackgroundDM;
+      color: v.$white;
+      &::placeholder {
+        color: v.$white;
+      }
+    }
+  }
+  .profile {
+    background-color: v.$cardBackgroundDM;
+    &_username,
+    &_date,
+    &_description {
+      color: v.$white;
+    }
+    &_stadistics {
+      background-color: v.$backgroundDM;
+      li {
+        &:nth-child(1),
+        &:nth-child(2) {
+          color: v.$white;
+        }
+      }
+    }
+    &_links {
+      color: v.$white;
+      a {
+        color: v.$white;
+      }
+      &_icons {
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
 }
