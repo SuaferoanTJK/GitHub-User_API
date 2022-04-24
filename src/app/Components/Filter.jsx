@@ -1,18 +1,19 @@
 import React from "react";
 import { Icons } from "./Icons";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { getUsers } from "../redux/actions/githubActions";
-
+import { useDispatch, useSelector } from "react-redux";
+import { obtainUsers } from "../redux/actions/githubActions";
 const Filter = () => {
+  const msg = useSelector((state) => state.msg);
   const dispatch = useDispatch();
   const [name, setName] = useState("");
+
   return (
     <div className="filter">
       <button
         className="filter_icon"
         onClick={() => {
-          dispatch(getUsers(name));
+          dispatch(obtainUsers(name));
         }}
       >
         <img src={Icons.Search} alt="Search Icon" />
@@ -26,14 +27,16 @@ const Filter = () => {
         }}
         onKeyDown={(e) => {
           if (e.key === "Enter") {
-            dispatch(getUsers(name));
+            dispatch(obtainUsers(name));
           }
         }}
       />
+
+      {msg ? <p className="filter_noResult">No result</p> : null}
       <button
         className="filter_btn"
         onClick={() => {
-          dispatch(getUsers(name));
+          dispatch(obtainUsers(name));
         }}
       >
         Search

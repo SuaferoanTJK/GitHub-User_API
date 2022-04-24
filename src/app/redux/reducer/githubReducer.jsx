@@ -3,7 +3,7 @@ import { CHANGE_MODE, GET_USERS, USE_MSG } from "../types/types";
 const initialState = {
   mode: false,
   user: {},
-  msg: "",
+  msg: false,
 };
 
 export const githubAPI = (state = initialState, action) => {
