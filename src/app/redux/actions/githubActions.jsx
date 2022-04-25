@@ -1,21 +1,11 @@
 import { CHANGE_MODE, GET_USERS, USE_MSG } from "../types/types";
 import axios from "axios";
-/* import { obtainUsers } from "./services/obtainUsers"; */
 
 export const changeMode = (mode) => ({
   type: CHANGE_MODE,
   payload: mode,
 });
 
-/* export const getUsers = (name) => {
-  return async (dispatch) => {
-    const user = await obtainUsers(name);
-    dispatch({
-      type: GET_USERS,
-      payload: user,
-    });
-  };
-}; */
 export const obtainUsers = (name = "octocat") => {
   return async (dispatch) => {
     let user = {};

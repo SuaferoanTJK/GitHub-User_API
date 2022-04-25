@@ -53,8 +53,8 @@ const Card = () => {
               src={Icons.Website}
               alt="Website Icon"
             />
-            <a href={user.blog}>
-              {user.blog !== null ? user.blog : "Not Available"}
+            <a href={`http://${user.blog}`}>
+              {user.blog !== "" ? user.blog : "Not Available"}
             </a>
           </li>
         </ul>
@@ -65,7 +65,7 @@ const Card = () => {
               src={Icons.Twitter}
               alt="Twitter Icon"
             />
-            <a href={user.twitter_username}>
+            <a href={`https://twitter.com/${user.twitter_username}`}>
               {user.twitter_username !== null
                 ? user.twitter_username
                 : "Not Available"}

@@ -6,6 +6,7 @@
   min-width: 100vw;
   display: flex;
   background-color: v.$backgroundLM;
+  transition: 0.3s all linear;
   @include m.tabletBig {
     justify-content: center;
     align-items: center;
