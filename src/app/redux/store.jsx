@@ -1,9 +1,9 @@
 import { applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
-// import { countriesAPI } from "./reducer/countriesReducer";
+import { githubAPI } from "./reducer/githubReducer";
 
 export default createStore(
-  // countriesAPI,
+  githubAPI,
   composeWithDevTools(applyMiddleware(thunk))
 );
